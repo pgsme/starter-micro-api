@@ -20,14 +20,21 @@
 // io.listen(process.env.PORT || 3000);
 
 const express = require("express");
+const socket = require("socket.io");
+// App setup
+const PORT = process.env.PORT || 3000;
 const app = express();
-const http = require("http");
-const server = http.createServer(app);
-
-app.get("/", (req, res) => {
-  res.send("<h1>Hello world</h1>");
+const server = app.listen(PORT, function () {
+  console.log(`Listening on port ${PORT}`);
 });
 
-server.listen(3000, () => {
-  console.log("listening on *:3000");
+// Static files
+app.use(express.static("public"));
+
+// Socket setup
+const io = socket(server, {
+  cors: {
+    origin: ["http://172.19.196.203/"],
+    credentials: true,
+  },
 });
