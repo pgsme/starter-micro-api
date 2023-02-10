@@ -2,7 +2,7 @@ const { Server } = require("socket.io");
 
 const io = new Server({
   cors: {
-    origin: ["http://172.19.196.203", "http://localhost", "http://localhost:3000"],
+    origin: ["http://172.19.196.203", "http://localhost", "http://localhost:3000", "http://172.19.196.203:8080"],
     credentials: true,
   },
 });
