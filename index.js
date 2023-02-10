@@ -34,7 +34,7 @@ app.use(express.static("public"));
 // Socket setup
 const io = socket(server, {
   cors: {
-    origin: ["http://172.19.196.203/"],
+    origin: ["https://motionless-boot-tuna.cyclic.app"],
     credentials: true,
   },
 });
