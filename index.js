@@ -5,7 +5,7 @@ const port = process.env.PORT || 80;
 const admin = require("firebase-admin");
 
 // Initialize the app with your service account key
-const serviceAccount = require("path/to/serviceAccountKey.json");
+const serviceAccount = require("./serviceAccount.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
