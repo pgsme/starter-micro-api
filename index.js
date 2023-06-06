@@ -15,7 +15,7 @@ admin.initializeApp({
 
 // Set the view engine to hbs
 app.set("view engine", "hbs");
-
+app.use(express.static("public"));
 app.use(express.json());
 
 // Define your routes here
