@@ -26,8 +26,24 @@ app.get("/", function (req, res) {
 
 // Create a new todo
 app.post("/todos", (req, res) => {
-  const { title, description } = req.body;
+  const { title, description, token } = req.body;
   const todo = { id: Date.now(), title, description };
+  const message = {
+    notification: {
+      title: "Notification Title",
+      body: "Notification Body",
+    },
+    token: token,
+  };
+  admin
+    .messaging()
+    .send(message)
+    .then((response) => {
+      console.log("Successfully sent notification:", response);
+    })
+    .catch((error) => {
+      console.log("Error sending notification:", error);
+    });
   todos.push(todo);
   res.status(201).json(todo);
 });
