@@ -12,7 +12,6 @@ admin.initializeApp({
   // Other configuration options if needed
 });
 
-
 // Set the view engine to hbs
 app.set("view engine", "hbs");
 app.use(express.static("public"));
@@ -21,9 +20,9 @@ app.use(express.json());
 // Define your routes here
 let todos = [];
 
-app.get('/', function (req, res) {
+app.get("/", function (req, res) {
   res.render("index", { title: "Express.js with Handlebars" });
-})
+});
 
 // Create a new todo
 app.post("/todos", (req, res) => {
