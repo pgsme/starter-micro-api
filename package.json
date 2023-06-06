@@ -2,9 +2,9 @@
   "name": "starter-micro-api",
   "version": "1.0.0",
   "description": "Cyclic.sh micro api starter",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "node app.js"
   },
   "author": "",
   "license": "ISC",
